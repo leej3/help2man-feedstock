@@ -1,6 +1,6 @@
 {% set name = "help2man" %}
-{% set version = "1.47.4" %}
-{% set sha256 = "d4ecf697d13f14dd1a78c5995f06459bff706fd1ce593d1c02d81667c0207753" %}
+{% set version = "1.47.6" %}
+{% set sha256 = "d91b0295b72a638e4a564f643e4e6d1928779131f628c00f356c13bf336de46f" %}
 
 package:
   name: {{ name|lower }}
@@ -10,15 +10,18 @@ source:
   fn: {{ name }}-{{ version }}.tar.xz
   url: https://ftp.gnu.org/gnu/{{ name }}/{{name}}-{{ version }}.tar.xz
   sha256: {{ sha256 }}
+  patches:
+    - 0001-Fix-shebang-in-face-of-short-limits.patch
 
 build:
-  number: 0
+  number: 1000
   skip: True  # [win]
 
 requirements:
   build:
-    - toolchain
-    - automake
+    - {{ compiler('c') }}
+    - make
+  host:
     - perl
   run:
     - perl
@@ -39,3 +42,4 @@ about:
 extra:
   recipe-maintainers:
     - jjhelmus
+    - mariusvniekerk
