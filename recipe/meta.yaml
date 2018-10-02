@@ -18,7 +18,8 @@ build:
 requirements:
   build:
     - {{ compiler('c') }}
-    - automake
+    - make
+  host:
     - perl
   run:
     - perl
