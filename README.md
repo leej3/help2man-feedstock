@@ -3,7 +3,7 @@ About help2man
 
 Home: https://www.gnu.org/software/help2man/
 
-Package license: GPL-3.0
+Package license: GPL-3.0-or-later
 
 Feedstock license: BSD 3-Clause
 
