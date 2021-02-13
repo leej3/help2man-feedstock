@@ -32,11 +32,11 @@ requirements:
     - {{ compiler('c') }}
 {% if bootstrapping != 'yes' %}
     - make
-{% endif %}
   host:
     - perl
   run:
     - perl
+{% endif %}
 
 test:
   commands:
